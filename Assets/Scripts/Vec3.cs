@@ -5,7 +5,6 @@ using UnityEngine;
 public struct Vec3
 {
     public float x, y, z;
-    public const float 
 
     public Vec3 normalized
     {
