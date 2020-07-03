@@ -41,11 +41,12 @@ public struct Vec3
         this.z = z;
     }
 
-    public override bool Equals(object other) { return this == (Vec3)other; }
+    public override bool Equals(object obj) { return this == (Vec3)obj; }
     public override int GetHashCode() { return this.GetHashCode(); }
 
     public static bool operator ==(Vec3 a, Vec3 b)
     {
+        var aa = a.x.Equals(b.x);
         return a.x == b.x && a.y == b.y && a.z == b.z;
     }
 
@@ -124,6 +125,4 @@ public struct Vec3
         var dz = a.z - b.z;
         return Mathf.Sqrt(dx * dx + dy * dy + dz * dz);
     }
-
-
 }

@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class MathUtil
 {
-    const float kPi = 3.14159265f;
-    const float k2Pi = kPi * 2.0f;
-    const float kPiOver2 = kPi / 2.0f;
-    const float k1OverPi = 1.0f / kPi;
-    const float k1Over2Pi = 1.0f / k2Pi;
+    public const float kPi = 3.14159265f;
+    public const float k2Pi = kPi * 2.0f;
+    public const float kPiOver2 = kPi / 2.0f;
+    public const float k1OverPi = 1.0f / kPi;
+    public const float k1Over2Pi = 1.0f / k2Pi;
 
-    public float wrapPi(float theta)
+    public static float wrapPi(float theta)
     {
         theta += kPi;
         theta -= Mathf.Floor(theta * k1Over2Pi) * k2Pi;
@@ -16,7 +16,7 @@ public class MathUtil
         return theta;
     }
 
-    public float safeAcos(float x)
+    public static float safeAcos(float x)
     {
         if (1 <= x)
         {
@@ -29,7 +29,7 @@ public class MathUtil
         return Mathf.Acos(x);
     }
 
-    public void sinCos(float theta, out float returnSin, out float returnCos)
+    public static void sinCos(float theta, out float returnSin, out float returnCos)
     {
         returnSin = Mathf.Sin(theta);
         returnCos = Mathf.Cos(theta);
